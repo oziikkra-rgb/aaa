@@ -730,18 +730,4 @@ Remove-Item "$env:TEMP\disableReg" -Recurse -Force
 Remove-Item "$env:TEMP\DefeatDefend.ps1" -Force
 
 
-[reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
-$msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Restart Computer?', 'zoicware', 'YesNo', 'Question')
-
-switch ($msgBoxInput) {
-
-  'Yes' {
-  
-    Restart-Computer
-  }
-
-  'No' {
-  }
-
-}
 
